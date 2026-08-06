@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="mitid_checkout_payment_gate" inherit_id="website_sale.payment" priority="20">
+        <xpath expr="//div[@id='payment_method']" position="before">
+            
+            <t t-if="requires_mitid and not mitid_verified">
+                <div class="card border-warning mb-4 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <h4 class="card-title font-weight-bold">Danish Law Age Verification Required</h4>
+                        <p class="card-text text-muted">
+                            Your cart contains alcoholic beverages. According to Danish legislation, 
+                            you must confirm your age using MitID before completing payment.
+                        </p>
+                        <a href="/shop/mitid/verify" class="btn btn-primary btn-lg px-4 mt-2">
+                            Verify Age with MitID
+                        </a>
+                    </div>
+                </div>
+
+                <style type="text/css">
+                    #payment_method, .o_website_sale_pay_button {
+                        display: none !important;
+                    }
+                </style>
+            </t>
+
+            <t t-if="requires_mitid and mitid_verified">
+                <div class="alert alert-success d-flex align-items-center mb-4" role="alert">
+                    <div>
+                        <strong>Age Verified via MitID</strong>
+                        <br/><small>You can now proceed to complete payment.</small>
+                    </div>
+                </div>
+            </t>
+
+        </xpath>
+    </template>
+</odoo>
