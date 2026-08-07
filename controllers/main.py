@@ -6,18 +6,26 @@ from odoo.addons.website_sale.controllers.main import WebsiteSale
 
 class MitIDWebsiteSale(WebsiteSale):
 
-    def _cart_contains_alcohol(self):
-        """ Checks if current cart contains a product under 'Alcohol' public category """
-        order = request.website.sale_get_order()
-        if not order or not order.order_line:
-            return False
+def _cart_contains_alcohol(self):
+    # Safe fetch for order across Odoo 17 and Odoo 19
+    website = request.website
+    order = None
+    
+    if hasattr(website, 'sale_get_order'):
+        order = website.sale_get_order()
+    elif hasattr(request, 'cart'):
+        order = request.cart
 
-        for line in order.order_line:
-            product = line.product_id.product_tmpl_id
-            category_names = [cat.name.lower() for cat in product.public_categ_ids]
-            if any('alcohol' in cat for cat in category_names):
-                return True
+    if not order or not order.order_line:
         return False
+
+    # Check if any line product belongs to an Alcohol public category
+    for line in order.order_line:
+        public_categories = line.product_id.public_categ_ids.mapped('name')
+        if any('alcohol' in cat.lower() for cat in public_categories if cat):
+            return True
+
+    return False
 
     @http.route('/shop/mitid/verify', type='http', auth='public', website=True)
     def mitid_verify_redirect(self, **kw):
