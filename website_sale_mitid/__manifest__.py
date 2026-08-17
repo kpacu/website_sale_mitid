@@ -8,7 +8,7 @@
         Ensures compliance with age-verification requirements before payment processing.
     """,
     'license': 'OPL-1',
-    'price': 1,
+    'price': 0,
     'currency': 'EUR',
     'author': 'IntelligentSolutions',
     'website': 'https://github.com/kpacu/website_sale_mitid',
