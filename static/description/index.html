@@ -1,4 +1,245 @@
-<section>
-    <h2>Danish MitID Age Gate</h2>
-    <p>Conditional age verification for alcohol sales.</p>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Danish MitID Age Gate for Alcohol (E-Commerce)</title>
+    <style>
+        .mitid-wrapper {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #212529;
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+        .mitid-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            border-radius: 16px;
+            padding: 48px 32px;
+            margin-bottom: 36px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .mitid-badge {
+            display: inline-block;
+            background-color: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 50px;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+        .mitid-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            height: 100%;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .mitid-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
+            border-color: #cbd5e1;
+        }
+        .mitid-step-num {
+            width: 38px;
+            height: 38px;
+            background-color: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 16px;
+            flex-shrink: 0;
+            margin-right: 16px;
+        }
+        .mitid-table th {
+            background-color: #f8fafc;
+            color: #334155;
+            font-weight: 600;
+        }
+        .code-pill {
+            background-color: #f1f5f9;
+            color: #0f172a;
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mitid-wrapper py-4">
+
+    <!-- HERO SECTION -->
+    <div class="mitid-hero text-center text-md-left">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-8">
+                <span class="mitid-badge">🇩🇰 Danish NSIS Compliance</span>
+                <h1 style="font-weight: 800; font-size: 32px; margin-bottom: 12px; color: #ffffff;">
+                    Danish MitID Age Gate for Alcohol
+                </h1>
+                <p style="font-size: 16px; color: #94a3b8; margin-bottom: 24px; max-width: 600px;">
+                    Conditional, automated 18+ age verification at checkout for alcohol categories. Seamlessly integrated with Signicat and MitID OpenID Connect broker.
+                </p>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-primary px-3 py-2 mr-2 mb-2" style="background-color: #2563eb;">Odoo eCommerce</span>
+                    <span class="badge bg-success px-3 py-2 mr-2 mb-2" style="background-color: #10b981;">Signicat OIDC Ready</span>
+                    <span class="badge bg-secondary px-3 py-2 mb-2" style="background-color: #475569;">100% Plug-and-Play</span>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 text-center mt-4 mt-md-0">
+                <div style="background: rgba(255,255,255,0.05); border: 2px dashed rgba(255,255,255,0.2); border-radius: 16px; padding: 24px;">
+                    <div style="font-size: 48px; margin-bottom: 8px;">🛡️ 🔞</div>
+                    <div style="color: #38bdf8; font-weight: bold; font-size: 18px;">MitID Verified</div>
+                    <div style="color: #94a3b8; font-size: 12px;">Instant Checkout Clearance</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VALUE HIGHLIGHTS -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-4 mb-3">
+            <div class="mitid-card">
+                <div style="font-size: 28px; margin-bottom: 12px;">⚖️</div>
+                <h4 style="font-weight: 700; font-size: 18px;">NSIS Law Compliant</h4>
+                <p style="color: #64748b; font-size: 14px; margin: 0;">
+                    Meets strict Danish legal requirements for online retail of age-restricted goods (wine, beer, spirits).
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="mitid-card">
+                <div style="font-size: 28px; margin-bottom: 12px;">🎯</div>
+                <h4 style="font-weight: 700; font-size: 18px;">Conditional Gating</h4>
+                <p style="color: #64748b; font-size: 14px; margin: 0;">
+                    Only triggers MitID verification when products from the <strong>Alcohol</strong> category are present in the cart.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="mitid-card">
+                <div style="font-size: 28px; margin-bottom: 12px;">⚡</div>
+                <h4 style="font-weight: 700; font-size: 18px;">Seamless Session Lock</h4>
+                <p style="color: #64748b; font-size: 14px; margin: 0;">
+                    Standard payment buttons stay locked until verified. Once confirmed, payment options unlock instantly without reloading the cart.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- HOW IT WORKS -->
+    <div class="card mb-5 border-0 shadow-sm" style="background-color: #f8fafc; border-radius: 16px; padding: 32px;">
+        <h3 class="text-center" style="font-weight: 800; margin-bottom: 28px; color: #0f172a;">How the Age Verification Flow Works</h3>
+        <div class="row">
+            <div class="col-md-3 text-center mb-3">
+                <div style="font-size: 32px; margin-bottom: 8px;">🛒</div>
+                <h5 style="font-weight: 700; font-size: 16px;">1. Cart Scan</h5>
+                <p style="font-size: 13px; color: #64748b;">Customer proceeds to payment with alcohol items in cart.</p>
+            </div>
+            <div class="col-md-3 text-center mb-3">
+                <div style="font-size: 32px; margin-bottom: 8px;">🔒</div>
+                <h5 style="font-weight: 700; font-size: 16px;">2. Payment Locked</h5>
+                <p style="font-size: 13px; color: #64748b;">Standard payment providers are hidden behind the MitID banner.</p>
+            </div>
+            <div class="col-md-3 text-center mb-3">
+                <div style="font-size: 32px; margin-bottom: 8px;">🆔</div>
+                <h5 style="font-weight: 700; font-size: 16px;">3. MitID Handshake</h5>
+                <p style="font-size: 13px; color: #64748b;">Customer approves age verification via official MitID broker.</p>
+            </div>
+            <div class="col-md-3 text-center mb-3">
+                <div style="font-size: 32px; margin-bottom: 8px;">✅</div>
+                <h5 style="font-weight: 700; font-size: 16px;">4. Order Unlocked</h5>
+                <p style="font-size: 13px; color: #64748b;">Customer returns to Odoo checkout and completes the payment.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SETUP & CONFIGURATION GUIDE -->
+    <div class="mb-5">
+        <h3 style="font-weight: 800; margin-bottom: 24px; color: #0f172a;">Step-by-Step Configuration</h3>
+
+        <!-- STEP 1 -->
+        <div class="d-flex align-items-start mb-4">
+            <div class="mitid-step-num">1</div>
+            <div>
+                <h5 style="font-weight: 700; margin-bottom: 6px;">Configure Your Signicat Broker</h5>
+                <p style="color: #64748b; font-size: 14px; margin-bottom: 8px;">
+                    In your Signicat (or MitID OIDC broker) application dashboard, register your return callback URL:
+                </p>
+                <code class="code-pill">https://your-domain.com/shop/mitid/callback</code>
+            </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="d-flex align-items-start mb-4">
+            <div class="mitid-step-num">2</div>
+            <div class="w-100">
+                <h5 style="font-weight: 700; margin-bottom: 6px;">Set System Parameters in Odoo</h5>
+                <p style="color: #64748b; font-size: 14px; margin-bottom: 12px;">
+                    Go to <strong>Settings &rarr; Technical &rarr; System Parameters</strong> and configure these 3 keys:
+                </p>
+                <div class="table-responsive">
+                    <table class="table table-bordered mitid-table" style="font-size: 13px;">
+                        <thead>
+                            <tr>
+                                <th>Parameter Key</th>
+                                <th>Description</th>
+                                <th>Example Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code class="code-pill">mitid.broker_domain</code></td>
+                                <td>Your OIDC broker base URL</td>
+                                <td><code>https://your-tenant.sandbox.signicat.com/auth/open</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="code-pill">mitid.client_id</code></td>
+                                <td>Your OIDC Client ID</td>
+                                <td><code>sandbox-short-sheep-673</code></td>
+                            </tr>
+                            <tr>
+                                <td><code class="code-pill">mitid.client_secret</code></td>
+                                <td>Your OIDC Client Secret</td>
+                                <td><code>your_broker_secret_key</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="d-flex align-items-start mb-4">
+            <div class="mitid-step-num">3</div>
+            <div>
+                <h5 style="font-weight: 700; margin-bottom: 6px;">Assign eCommerce Alcohol Category</h5>
+                <p style="color: #64748b; font-size: 14px; margin-bottom: 0;">
+                    Under <strong>Website &rarr; eCommerce &rarr; Products</strong>, ensure all age-restricted products are assigned to a public category containing the word <strong>Alcohol</strong> (e.g. <em>Alcohol</em>, <em>Beer & Alcohol</em>, <em>Wine & Spirits</em>).
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUPPORT FOOTER -->
+    <div style="background-color: #0f172a; color: white; border-radius: 12px; padding: 28px; text-align: center;">
+        <h4 style="font-weight: 700; margin-bottom: 8px;">Need Custom Integration or Assistance?</h4>
+        <p style="color: #94a3b8; font-size: 14px; margin-bottom: 16px;">
+            Developed by IntelligentSolutions. We provide support for custom broker onboarding, country-specific compliance rules, and enterprise Odoo setups.
+        </p>
+        <a href="https://krassi.dimitrof.com" target="_blank" class="btn btn-primary" style="background-color: #38bdf8; border: none; color: #0f172a; font-weight: 700; padding: 10px 24px; border-radius: 8px;">
+            Get Support &rarr;
+        </a>
+    </div>
+
+</div>
+</body>
+</html>
